@@ -27,6 +27,7 @@ The application uses Bootstrap 5 for the front-end design and connects to a data
 <h3>**Future Improvements**</h3>
 <ol>
     <li>Using Hashing function for storing passwords of users.</li>
+    <li>Use Primary keys and Foreign keys for connecting tables.</li>
     <li>Integration of payment gateway</li>
     <li>User authentication and individual profile management</li>
     <li>Implementation of search functionality to find suitable travel packages</li>
