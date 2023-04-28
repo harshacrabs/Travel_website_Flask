@@ -31,6 +31,7 @@ The application uses Bootstrap 5 for the front-end design and connects to a data
     <li>User authentication and individual profile management</li>
     <li>Implementation of search functionality to find suitable travel packages</li>
     <li>Incorporation of Google Maps API to provide directions and location information</li>
+    <li>Reducing the code by using Codeblocks or Codesnippets</li>
 </ol>
 
 
