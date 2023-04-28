@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trippable</title>
+
+
+    <!--Bootstrap 5 CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!--Font Awesome 5 CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    <!--Style CSS-->
+   
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+      /* ... */
+      body {
+        background-color: black;
+      }
+
+      .transparent-bg {
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 15px;
+        padding: 20px;
+        color: white;
+      }
+
+      .carousel-img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover; /* ensures that the entire image is displayed without distortion */
+        display: block;
+        /* margin: 0 auto; centers the carousel images horizontally */
+}
+
+      .carousel {
+        max-width: 400px;
+        margin: 0 auto;
+        
+      }
+
+      .carousel-inner {
+        display: flex;
+        justify-content: center;
+      }
+
+      .carousel-item {
+        flex: 0 0 auto;
+        opacity: 0;
+        transition: opacity 0.5s;
+        position: relative;
+        
+      }
+
+      .carousel-item.active {
+        opacity: 1;
+      }
+
+      .caption-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+
+      .caption-container h5 {
+        color: white;
+      }
+    </style>
+
+<script>
+  const carouselImages = [
+    {
+      src: "/static/images/india.png",
+      alt: "India",
+      buttonText: "Book Now",
+      buttonFunction: "populateToField('India')"
+    },
+    {
+      src: "/static/images/us.png",
+      alt: "United States",
+      buttonText: "Book Now",
+      buttonFunction: "populateToField('United States')"
+    },
+    {
+      src: "/static/images/uk.png",
+      alt: "United Kingdom",
+      buttonText: "Book Now",
+      buttonFunction: "populateToField('United Kingdom')"
+    },
+    {
+      src: "/static/images/italy.png",
+      alt: "Italy",
+      buttonText: "Book Now",
+      buttonFunction: "populateToField('Italy')"
+    },
+    {
+      src: "/static/images/france.png",
+      alt: "France",
+      buttonText: "Book Now",
+      buttonFunction: "populateToField('France')"
+    }
+  ];
+
+  let currentImageIndex = 0;
+
+  function changeCarouselImage(nextIndex) {
+    const carouselItem = document.querySelectorAll('.carousel-item');
+    const activeItem = document.querySelector('.carousel-item.active');
+    activeItem.classList.remove('active');
+    activeItem.style.opacity = 0;
+
+    // set the next image to active
+    currentImageIndex = nextIndex;
+    carouselItem[currentImageIndex].classList.add('active');
+    carouselItem[currentImageIndex].style.opacity = 1;
+
+    // update the caption and button text
+    const caption = document.querySelector('.caption-container h5');
+    const button = document.querySelector('.caption-container button');
+    caption.textContent = carouselImages[currentImageIndex].alt;
+    button.textContent = carouselImages[currentImageIndex].buttonText;
+    button.setAttribute('onclick', carouselImages[currentImageIndex].buttonFunction);
+  }
+</script>
+    
+    
+    <!--Google fonts-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+
+    
+</head>
+<body>
+<!--Nav Bar Start-->
+<nav class="navbar navbar-expand-lg" id="navbar" >
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/" id="logo"><span>T</span>rippable</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span><i class="fa-solid fa-bars"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Book</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/packages">Packages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/chart">Trending</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+      </ul>
+
+      <form class="d-flex">
+        <input class="form-control me-2" type="text" placeholder="Search">
+        <button class="btn btn-primary" type="button">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<!-- Nav Bar End -->
+
+<!-- booking form start  -->
+
+<body>
+
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/static/images/india.png" class="carousel-img" alt="India">
+        <div class="caption-container d-none d-md-block">
+          <h5>India</h5>
+          <button class="btn btn-primary" onclick="populateToField('India')">Book Now</button>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/static/images/us.png" class="carousel-img" alt="United States">
+        <div class="caption-container d-none d-md-block">
+          <h5>United States</h5>
+          <button class="btn btn-primary" onclick="populateToField('United States')">Book Now</button>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/static/images/uk.png" class="carousel-img" alt="United Kingdom">
+        <div class="caption-container d-none d-md-block">
+          <h5>United Kingdom</h5>
+          <button class="btn btn-primary" onclick="populateToField('United Kingdom')">Book Now</button>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/static/images/italy.png" class="carousel-img" alt="Italy">
+        <div class="caption-container d-none d-md-block">
+          <h5>Italy</h5>
+          <button class="btn btn-primary" onclick="populateToField('Italy')">Book Now</button>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/static/images/france.png" class="carousel-img" alt="France">
+        <div class="caption-container d-none d-md-block">
+          <h5>France</h5>
+          <button class="btn btn-primary" onclick="populateToField('France')">Book Now</button>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %} {% if category ==
+    'error' %}
+    <div class="alert alert-danger alter-dismissible fade show" role="alert">
+      {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    {% else %}
+    <div class="alert alert-success alter-dismissible fade show" role="alert">
+      {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    {% endif %} {% endfor %} {% endif %} {% endwith %}
+
+
+
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="transparent-bg">
+          <form id="booking-form" method="POST" action="{{ url_for('booking')}}"  >
+            <div class="mb-3">
+              <label for="from-location" class="form-label">From Location</label>
+              <input type="text" class="form-control" id="from-location" name="from_location" required >
+            </div>
+
+            <div class="mb-3">
+              <label for="to-location" class="form-label" >To Location</label>
+              <input type="text" class="form-control" id="to-location"name="to_location" readonly>
+            </div>
+          
+            <div class="mb-3">
+              <label for="from-date" class="form-label">From Date of Travel</label>
+              <input type="date" class="form-control" id="from-date" required name="from_date">
+            </div>
+            <div class="mb-3">
+              <label for="to-date" class="form-label">To Date of Travel</label>
+              <input type="date" class="form-control" id="to-date" required name="to_date">
+            </div>
+            <div class="mb-3">
+              <label for="num-travellers" class="form-label">Number of Travellers</label>
+              <input type="number" class="form-control" id="num-travellers" name="num_travellers" min="1" required>
+            </div>
+            <div class="mb-3">
+              <label for="promo-code" class="form-label">Promo Code</label>
+              <input type="text" class="form-control" id="promo-code" name="promo_code">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- booking form end  -->
+
+
+<script>
+  function populateToField(location) {
+      document.getElementById('to-location').value = location;
+    }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+</body>
+</html>
+

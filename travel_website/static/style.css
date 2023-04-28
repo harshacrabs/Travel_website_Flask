@@ -1,0 +1,863 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Lato', sans-serif;
+    
+}
+
+body{
+    overflow-x: hidden;
+}
+
+section{
+    padding: 0px 0;
+    background-color: #fff;
+}
+
+/* Nav Bar Start*/
+
+#navbar{
+    background: black;   
+}
+
+#logo{
+    font-size:  36px;
+    font-weight: 550;
+    color: white;
+    text-shadow: 0px 1px 1px black;
+    margin-bottom: 5px;
+
+}
+
+#logo span{
+    color: #ffa500 
+}
+.navbar-toggler span {
+    color: #ffa500;
+}
+.navbar-nav{
+    margin-left: 20px;
+}
+
+.nav-item .nav-link{
+    font-size: 16px;
+    font-weight: 550;
+    color: white;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    transition: 0.5s ease;
+}
+
+.nav-item .nav-link:hover{
+    background:#ffa500;
+    color: white;
+}
+#navbar form button{
+    background: orange;
+    color:white;
+    border:none;
+    width: auto;
+    height: auto;
+
+}
+/* Nav Bar End*/
+
+/* Home Section Start */
+.home{
+    width: 100%;
+    height: 90vh;
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.2)),url(/static/images/background\ img.png);
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+.home .content{
+    text-align: center;
+    padding-top: 200px;
+}
+
+.home .content h5{
+    color: white;
+    font-size: 38px;
+    font-weight: 500;
+    text-shadow: 0px 1px 1px black;
+}
+
+.home .content h1{
+    color: white;
+    font-size: 70px;
+    font-weight: 550;
+    text-shadow: 0px 1px 1px black;
+    margin-top: 5px;
+}
+
+.changecontent::after{
+    content: ' ';
+    color: #ffa500;
+    text-shadow: 0px 1px 1px black ;
+    animation: changetext 10s infinite linear;
+}
+@keyframes changetext{
+    0%{content: "France";}
+    10%{content: "Spain";}
+    20%{content: "United States";}
+    30%{content: "India";}
+    40%{content: "China";}
+    50%{content: "Singapore";}
+    60%{content: "Thailand";}
+    70%{content: "Italy";}
+    80%{content: "Mexico";}
+    90%{content: "Turkey";}
+    100%{content: "United Kingdom";}
+}
+.home .content p{
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    text-shadow: 0px 1px 1px black;
+    margin-bottom: 30px;
+    margin-top: 5px;
+}
+
+.home .content a{
+    padding: 10px;
+    background: white;
+    color: black;
+    letter-spacing: 2px;
+    font-weight: 550;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.5s;
+
+}
+
+.home .content a:hover{
+    background: #ffa500;
+    color: white;
+}
+
+@media (max-width:850px){
+    .home{
+        background-position: 50%;
+    }
+}
+
+@media (max-width:450px){
+    .home .content h5{
+        font-size: 25px;
+    }
+    .home .content h1{
+        font-size: 38px;
+    }
+    .home .content p{
+        font-size: 13px;
+    }
+}
+/* Home Section End */
+
+
+/* Book Section Start */
+.log{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.9)),url(./images/book.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 0%;
+}
+
+
+
+.wrapper {
+    max-width: 800px;
+    margin: 50px auto;
+   
+
+}
+
+.wrapper form {
+    padding: 30px 50px;
+}
+
+.wrapper form .form-group {
+    padding-bottom: .5rem;
+}
+
+.wrapper form .option {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    display: block;
+}
+
+.wrapper form .option input {
+    display: none;
+}
+
+.wrapper form .checkmark {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    height: 17px;
+    width: 17px;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 50%;
+}
+
+.wrapper form .option input:checked~.checkmark:after {
+    display: block;
+}
+
+.wrapper form .option .checkmark:after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    display: block;
+    border-radius: 50%;
+    background-color: #333;
+    position: absolute;
+    top: 48%;
+    left: 52%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out 0s;
+}
+
+.wrapper form .option:hover input[type="radio"]~.checkmark {
+    background-color: #f4f4f4;
+}
+
+.wrapper form .option input[type="radio"]:checked~.checkmark {
+    background: #fff;
+    color: #fff;
+    transition: 300ms ease-in-out 0s;
+}
+
+.wrapper form .option input[type="radio"]:checked~.checkmark:after {
+    transform: translate(-50%, -50%) scale(1);
+    color: #fff;
+}
+
+.wrapper form a {
+    color: #fff;
+}
+
+.wrapper form .form-control {
+    outline: none;
+    border: none;
+}
+
+.wrapper form .form-control:focus {
+    box-shadow: none;
+}
+
+.wrapper form input[type="text"]:focus::placeholder {
+    color: transparent
+}
+
+input[type="date"] {
+    cursor: pointer;
+}
+
+.wrapper form .label::after {
+    position: absolute;
+    /* background-color: #fff; */
+    top: 5px;
+    left: 0px;
+    font-size: 0.9rem;
+    margin: 0rem 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    font-weight: 600;
+    color: #999;
+    transition: all .2s ease-in-out;
+    transform: scale(0);
+}
+
+.wrapper form .label#from::after {
+    content: 'From';
+}
+
+.wrapper form .label#to::after {
+    content: 'To';
+}
+
+.wrapper form .label#depart::after {
+    content: 'Depart Date';
+}
+
+.wrapper form .label#return::after {
+    content: 'Return Date';
+}
+
+.wrapper form .label#psngr::after {
+    content: 'Traveller(s)';
+}
+
+.wrapper form input[type="text"]:focus~.label::after {
+    top: -15px;
+    left: 0px;
+    transform: scale(1);
+}
+
+.wrapper form input[type="date"]:focus~.label::after {
+    top: -15px;
+    left: 0px;
+    transform: scale(1);
+}
+
+/* Margin */
+.margin {
+    margin: 2rem 0rem;
+}
+
+/* Media Queries */
+@media(max-width: 575.5px) {
+    .wrapper {
+        margin: 10px;
+    }
+
+    .wrapper form {
+        padding: 20px;
+    }
+
+    .margin {
+        margin: .2rem 0rem;
+    }
+}
+
+
+
+/* Book Section End */
+
+
+
+/* Packages Section Start */
+
+.packages .main-txt h1{
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 600;
+    text-shadow: 0px 1px 1px black;
+}
+.packages .main-txt h1 span{
+    color: #ffa500;
+}
+
+.packages .card{
+    border-radius: 5px;
+    border: none;
+    box-shadow: rgba(0,0,0,1) 0px 4px 12px;
+}
+
+.packages .card img{
+    border-radius: 5px;
+}
+.packages .card .card-body{
+    background: transparent;
+}
+.packages .card .card-body h3{
+    font-size: 25px;
+    font-weight: 600;
+}
+.packages .card .card-body p{
+    font-size: 15px;
+}
+.checked{
+    color:#ffa500
+}
+.star i{
+    font-size: 15px;
+}
+.packages .card .card-body h6{
+    font-size: 20px;
+}
+.packages .card .card-body a{
+    font-size: 20px;
+    text-decoration: none;
+    background: #ffa500;
+    color: white;
+    border-radius: 5px;
+}
+
+
+/* Packages Section End */
+
+
+/* Services Section Start */
+.services{
+    background:#fff;
+    margin-top: 50px;
+}
+
+.services .main-txt h1{
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 600;
+    text-shadow: 0px 1px 1px black;
+}
+.services .main-txt h1 span{
+    color: #ffa500;
+}
+
+.services .card{
+    box-shadow: rgba(0,0,0,1) 0px 4px 12px;
+    border: none;
+    cursor: pointer;
+}
+.services .card i{
+    font-size: 80px;
+    text-align: center;
+    color: #ffa500;
+    margin-top: 20px;
+}
+
+.services .card .card-body h3{
+    font-weight: 600;
+
+}
+.services .card .card-body{
+    text-align: center;
+}
+/* Services Section End */
+
+
+/* Account Section Start  */
+
+
+.account {
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6)),url(./images/account.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background-size:cover;
+    background-position: center;
+}
+
+
+.account .signup{
+    background-color: transparent;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    overflow: hidden;
+    width: 400px;
+    max-width: 100%;
+        
+}
+
+.account .signup h2{
+    padding-left: 90px;
+    color: #fff;
+}
+
+
+.account .header{
+    background-color: transparent;
+    /* border: 1px solid #f0f0f0; */
+    /* padding: 20px 20px; */
+    display: inline;
+    align-items: center;
+    vertical-align: auto;
+    
+}
+
+.account .header h2{
+    margin: 0;
+    color: #f0f0f0;
+
+    
+}
+
+
+.signup .form{
+    padding: 10px 20px;
+
+}
+
+.account .form-control {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+    background: transparent;
+}
+
+.account .form-control label{
+    display: inline;
+    margin-bottom: 5px;
+    color: #f0f0f0;
+    font-size: 16px;
+}
+
+.account .form-control input{
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+    background: #c69b4c;
+
+}
+
+.account .form-control input::placeholder {
+    color:black; /* change the color to your desired color */
+}
+
+.account .form-control.success input {
+    border-color: #21f10aee;
+
+}
+.account .form-control.error input {
+    border-color: #e74c3c;
+
+}
+
+
+
+.account .form-control i{
+    position: absolute;
+    top: 45px;
+    right: 25px;
+    visibility: hidden;
+
+    
+}
+
+.form-control.form-control.success i.fa-check-circle{
+    visibility: visible;
+    color: #21f10aee;
+}
+.form-control.form-control.error i.fa-exclamation-circle{
+    visibility: visible;
+    color: #e74c3c;
+}
+
+.form-control.error small{
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.account .form-control small{
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 10;
+    font-size: 14px;
+}
+
+.account .form button{
+    background-color: #ffa500;
+    border: 2px solid;
+    color: transparent;
+    display: black;
+    font-size: 16px;
+    padding: 10px;
+    width: 50%;
+    width: 100%;
+    color: white;
+
+}
+
+@media only screen and (max-width: 768px) {
+    .form {
+      max-width: 300px;
+    }
+  }
+  
+  /* Styles for mobile screens */
+  @media only screen and (max-width: 480px) {
+    .form {
+      max-width: 360px;
+      display: flexbox;
+      align-items: center;
+    }
+    .form{
+        padding: 30px 10px;
+        padding-left: 20px;
+     
+    }
+  }
+
+/* Account Section End */
+
+
+/* About Section Start */
+
+
+
+.title{
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+    margin-right: -3px;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #333;
+    position: relative;
+    margin-top: 2rem;
+}
+
+.title::after{
+    content: "";
+    width: 15rem;
+    height: .8rem;
+    background-color: #ffa500;
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2rem;
+    margin-top: 0px;
+}
+
+.about .card-wrapper{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    height: fit-content;
+    justify-content: space-around;
+}
+
+.about .card{
+    width: 25rem;
+    background-color: #ebeef8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+    box-shadow: .5rem .5rem 3rem rgba(0,0,0,0.3);
+}
+
+.about .card .card-img{
+    width: 100%;
+    height: 26rem;
+    object-fit: cover;
+    clip-path: polygon(0 1%, 100% 0, 100% 75%, 0% 100%);
+}
+
+.profile-img{
+    width: 15rem;
+    height: 15 rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: -11rem;
+    z-index: 999;
+    border: 1rem solid #ebeef8;
+
+}
+
+.about .card h1{
+    font-size: 2.5rem;
+    color: black;
+    margin-bottom: 0%;
+}
+
+.about .card h4{
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 0%;
+
+}
+
+.about .card p{
+    font-size: 1rem;
+    color: #333;
+    margin: 1.5rem 0;
+}
+.job-title{
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.tell{
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+    font-style:normal;
+    text-align:center;
+    color: #333;
+
+}
+
+.about .card .btn{
+    padding: 1rem 1rem;
+    background-color: #445ae3;
+    border-radius: 2rem;
+    margin: 2px 0;
+    margin-top: 0px;
+    text-transform: uppercase;
+    color: #eee;
+    font-size: 1rem;
+    transition: all;
+}
+
+.about .card .btn:hover{
+    transform: translateY(-2px);
+    box-shadow: .5rem .5rem 2rem rgba(0,0,0,0.2);
+}
+
+.social-media{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem 0;
+    margin-top: 1.5rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.social-media i{
+    font-size: 3rem;
+    transition: color .5s;
+}
+.fa-facebook-square{
+    color: #3b5999;
+}
+.fa-twitter-square{
+    color: #55acee;
+}
+.fa-instagram-square{
+    color: #e6683c;
+}
+
+.fa-facebook-square:hover,
+.fa-twitter-square:hover,
+.fa-instagram-square:hover,
+.fa-linkedin:hover{
+    color: #ffa500;
+
+
+}
+
+@media screen and (min-width: 700px) {
+    .card-wrapper{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .card{
+        margin: 2rem;
+        transition: transform .5s;
+
+    }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+        
+    }
+    .card:nth-child(1){
+        animation: fadeIn .5s .5s backwards;
+    }
+    .card:nth-child(2){
+        animation: fadeIn .5s 1s backwards;
+    }
+    .card:nth-child(3){
+        animation: fadeIn .5s 1.5s backwards;
+    }
+    .card:nth-child(4){
+        animation: fadeIn .5s 2s backwards;
+    }
+    .card:nth-child(5){
+        animation: fadeIn .5s 2.5s backwards;
+    }
+    
+    .card:hover{
+        transform: scale(1.05);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    
+    .card-wrapper{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .card{
+        margin: 2rem;
+        transition: transform .5s;
+  }
+   @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    
+}
+}
+
+/* About Section End */
+
+/* Footer Section Start  */
+
+#footer {
+    width: 100%;
+    margin-top: 150px;
+    text-align: center;
+    background: #f9f9f9;
+}
+
+#footer h1{
+    font-weight: 600;
+    padding-top: 30px;
+    text-shadow: 0px 0px 1px black;
+}
+
+#footer h1 span{
+    color: #ffa500;
+}
+
+.social-links i{
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    background: black;
+    color: white;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+.social-links i:hover{
+    background: #ffa500;
+}
+/* Footer Section End */
+
+
+
+canvas {
+    border: 1px dotted red;
+  }
+  
+  .chart-container {
+    position: relative;
+    margin: auto;
+    height: 100vh;
+    width: 100%;
+  }
+
+
+
