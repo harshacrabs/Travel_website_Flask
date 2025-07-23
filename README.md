@@ -4,7 +4,7 @@ Users can input their desired travel details such as the departure and destinati
 The application uses Bootstrap 5 for the front-end design and connects to a database for storing and retrieving user information.</p>
 
 
-<h3>**Features**</h3>
+### Features
 <ol>
     <li>User-friendly interface with Bootstrap 5.1.3</li>
     <li>Form validation for required fields</li>
@@ -14,7 +14,7 @@ The application uses Bootstrap 5 for the front-end design and connects to a data
     <li>Responsive design for optimal viewing on various devices</li>
 </ol>
 
-<h3>**Technologies**</h3>
+### Technologies
 <ol>
     <li>Python Flask</li>
     <li>HTML/CSS</li>
@@ -24,7 +24,7 @@ The application uses Bootstrap 5 for the front-end design and connects to a data
     <li>Sqlite Database</li>
 </ol>
 
-<h3>**Future Improvements**</h3>
+### Future Improvements
 <ol>
     <li>Using Hashing function for storing passwords of users.</li>
     <li>Use Primary keys and Foreign keys for connecting tables.</li>
@@ -37,5 +37,4 @@ The application uses Bootstrap 5 for the front-end design and connects to a data
 
 ### Demo
 
-![website_walkthrough](https://github.com/user-attachments/assets/5d47453a-92f1-4c1b-a329-24e56f147ac3)
 
