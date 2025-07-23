@@ -35,11 +35,5 @@ The application uses Bootstrap 5 for the front-end design and connects to a data
     <li>Reducing the code by using Codeblocks or Codesnippets</li>
 </ol>
 
+![website_walkthrough](https://github.com/user-attachments/assets/5d47453a-92f1-4c1b-a329-24e56f147ac3)
 
-<h3>**Contributors**</h3>
-<ol>
-    <li>Lakshman</li>
-    <li>Deeksha</li>
-    <li>Manikanta</li>
-    <li>Shilpi Kumari</li>
-</ol>
